@@ -1,624 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Raman</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
-    <link rel="stylesheet" href="assets/css/baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/Projects-Grid-Horizontal-images.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raman Talwar</title>
+<meta name="description" content="Raman Talwar, PhD candidate in robot manipulation at IDLab-AIRO, Ghent University – imec. Coding agents for robots, contact-rich manipulation, real hardware.">
+<meta property="og:title" content="Raman Talwar">
+<meta property="og:description" content="Robot manipulation research at IDLab-AIRO, Ghent University – imec.">
+<meta property="og:image" content="https://rtalwar2.github.io/assets/img/coding-agent-cell.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231f2a30'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='30' text-anchor='middle' fill='%23e8e2d4'%3ERT%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+:root{
+  --bg:#faf8f4; --surface:#ffffff; --ink:#1f2a30; --ink-2:#3a4650; --muted:#6a747c;
+  --line:#e3ded4; --accent:#b5542f; --accent-ink:#9a4426; --accent-soft:#f6e6dd;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --max:960px; --radius:8px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#171c20; --surface:#1f262b; --ink:#ebe7df; --ink-2:#cfd5d9; --muted:#95a0a8;
+  --line:#2f383f; --accent:#d9835c; --accent-ink:#e39a78; --accent-soft:#3a2a22; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#171c20; --surface:#1f262b; --ink:#ebe7df; --ink-2:#cfd5d9; --muted:#95a0a8;
+  --line:#2f383f; --accent:#d9835c; --accent-ink:#e39a78; --accent-soft:#3a2a22; color-scheme:dark;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;height:auto;display:block}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--sans);line-height:1.15;letter-spacing:-.01em;margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:20px}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);font-family:var(--sans);font-size:14px}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px}
+nav .brand{font-weight:700;color:var(--ink);letter-spacing:.02em;white-space:nowrap}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;flex-wrap:wrap}
+nav ul a{color:var(--ink-2)}
+@media (max-width:520px){nav ul{gap:12px;font-size:13px}}
+
+.hero{padding-block:64px 40px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:760px){.hero-grid{grid-template-columns:1fr}.hero{padding-block:40px 24px}}
+.eyebrow{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
+.hero h1{font-size:clamp(38px,6vw,56px);font-weight:700}
+.hero .lede{font-size:21px;line-height:1.5;color:var(--ink-2);margin:20px 0 24px;max-width:38em}
+.actions{display:flex;flex-wrap:wrap;gap:10px;font-family:var(--sans);font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:500}
+.btn:hover{text-decoration:none;border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn svg{width:16px;height:16px}
+.hero-fig{margin:0}
+.hero-fig img{border-radius:var(--radius);aspect-ratio:16/10;object-fit:cover;width:100%}
+.hero-fig figcaption{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:8px}
+
+section{padding-block:40px;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:180px minmax(0,1fr);gap:32px}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:12px}}
+.sec-head h2{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:6px}
+.prose p{margin:0 0 1em;max-width:44em}
+.prose p:last-child{margin-bottom:0}
+
+.pub{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+@media (max-width:640px){.pub{grid-template-columns:1fr}}
+.pub img{border-radius:6px;aspect-ratio:16/10;object-fit:cover;width:100%}
+.pub h3{font-size:22px;font-weight:600;margin-bottom:6px}
+.pub .authors{font-size:16px;color:var(--ink-2);margin:0 0 4px}
+.pub .authors b{font-weight:600;color:var(--ink)}
+.pub .venue{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 10px}
+.pub .summary{margin:0 0 14px;font-size:17px}
+.links{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--sans);font-size:14px;font-weight:500}
+.links a::after{content:"↗";margin-left:3px;font-size:12px;opacity:.7}
+.links a.local::after{content:none}
+
+.projects{display:grid;gap:20px}
+.proj{display:grid;grid-template-columns:160px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:640px){.proj{grid-template-columns:1fr}.proj .ph{display:none}.proj img{aspect-ratio:16/9}}
+.proj img,.proj .ph{border-radius:6px;aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--accent-soft)}
+.proj .ph{display:grid;place-items:center;color:var(--accent-ink);font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.06em}
+.proj h3{font-size:19px;font-weight:600}
+.proj h3 span{font-weight:400;color:var(--muted);font-family:var(--serif);font-size:16px;margin-left:8px}
+.proj p{margin:6px 0 8px;font-size:17px;max-width:44em}
+.also{margin-top:28px;padding-top:20px;border-top:1px dashed var(--line);color:var(--ink-2);font-size:17px}
+
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:12px 0;border-bottom:1px solid var(--line)}
+.timeline li:last-child{border-bottom:none}
+.timeline .when{font-family:var(--sans);font-size:13px;color:var(--muted);padding-top:5px;font-variant-numeric:tabular-nums}
+.timeline .what{font-size:17px}
+.timeline .what b{font-weight:500;color:var(--ink);font-family:var(--sans);font-size:16px}
+.timeline .what small{display:block;color:var(--ink-2);font-size:16px}
+@media (max-width:520px){.timeline li{grid-template-columns:1fr;gap:2px}}
+
+.contact .links{font-size:16px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start;max-width:none}
+@media (max-width:640px){.contact-grid{grid-template-columns:1fr}}
+.side-fig{margin:0}.side-fig img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover}.side-fig figcaption{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:6px}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;font-family:var(--sans);font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
 </head>
+<body>
 
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="57">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#page-top">RT</a><button data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i
-                    class="fa fa-align-justify"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="text-center text-white d-flex masthead" style="background-image: url('assets/img/header4.jpg');">
-        <div class="container my-auto">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h1 class="text-uppercase"><strong>Raman Talwar</strong></h1>
-                    <hr>
-                </div>
-            </div>
-            <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5"><span
-                        style="color: rgb(231, 233, 234); background-color: rgb(0, 0, 0);">“Quit, don’t quit. Noodles,
-                        don’t noodles. You are too concerned with what was and what will be." - Master Oogway</span></p>
-                <a class="btn btn-primary btn-xl" role="button" href="#about">about me</a>
-            </div>
-        </div>
-    </header>
-    <section id="about" class="bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col offset-lg-8 text-center mx-auto">
-                    <h2 class="text-white section-heading">Hey there!</h2>
-                    <hr class="light my-4">
-                    <p class="text-faded mb-4" style="text-align: center;">
-                        My name is Raman and I'm a master's student of information engineering technology.
-                        I did my thesis on the intersection between cybersecurity and AI.&nbsp;&nbsp;<br><br>
-                        While I usually answer "something with computers" when someone asks me what I study, that's not
-                        my only interest.
-                        I also like eating, travelling, watching movies, doing random stuff, completing my bucket
-                        list,...<br><br>
-                        I've been fortunate to have received numerous opportunities to develop myself in both technical
-                        and non-technical ways.&nbsp;
-                        For instance, I embarked on a mini Erasmus experience with the ENLIGHT University to Groningen.
-                        Additionally, I participated in the Open Summer of Code as a student in 2022 and a wizard in
-                        2024,
-                        I was selected to enroll in the one-year 'Innovation for Society' excellence program at Ghent
-                        University,
-                        I've also been a delegate of the European Youth Parliament (EYP) Belgium.&nbsp;And I've also won
-                        an award🏆!
-                        Boulvin-Van Engelen from AIG.<br><br>
-                        When I'm not studying or writing my thesis, you can find me following interesting online
-                        courses,
-                        cooking or trying to find new ways to make my tea taste better.
-                        <br><br>That's me in a nutshell. If you want to know more, feel free to hit me up, my contacts
-                        are at the bottom of the page 😉.&nbsp;
-                    </p><a class="btn btn-light btn-xl" role="button" href="#projects">projects</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="projects">
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-robot">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">ROBOT FIGHT (EVERY SUMMER)</h4><button class="btn-close" type="button"
-                            aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>This all started with one of my best friends who challenged me for a robot fight. We both had
-                            to make a robot by the end of summer and compete in a competition.<br><br>The rules are
-                            simple:<br><br>•&nbsp;&nbsp;No manual intervention.&nbsp;<br>•&nbsp;&nbsp;We must build a
-                            robot which we can control (autopilot is also a possibility but a little
-                            complex)&nbsp;<br>•&nbsp;&nbsp;All types of electronics are allowed.<br>•&nbsp;&nbsp;We must
-                            design our own weapons and can 3D print them.&nbsp;<br>For my robot I used a servo motor and
-                            a stepper motor as actuators. My controller was a simple joystick and an Arduino Uno
-                            microcontroller. Now the most important part, the weapons, for my weapons I used
-                            items&nbsp;I could find at home. Eventually I ended up using sparkle sticks firework as my
-                            main weapon. I made my own ignition system using thin pencil graphite and four 9V batteries.
-                            And as a little extra I also included an inversely polarized capacitor. Sadly, my robot
-                            lost, but I had a lot of fun developing it and I learned a lot about working with hardware
-                            and controlling it with my own software. We had so much fun, that we organize it every
-                            summer now.</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-ifs">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">INNOVATION FOR SOCIETY (09/2021 - 06/2022)</h4><button class="btn-close"
-                            type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>I was admitted to this program organized by the faculty of Engineering and Architecture at
-                            Ghent University, designed for students with excellent academic results who are also eager
-                            to work on projects that make the society a better place. <br><br>In this program I got my
-                            first experience with AI and machine learning. I had the freedom to experiment during the
-                            year and get hands-on experience with TensorFlow and image processing in python. The
-                            research was focused on detecting bias in ML models and trying to remove it.<br><br>During
-                            this program I made classification and outlier detection models and I experimented with
-                            image processing libraries in python.<br><br><br></p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-rest">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">EXTENSIVE REST API (11/2021)</h4><button class="btn-close" type="button"
-                            aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>This is a REST API and web application made<br> for the course 'Server Application
-                            Frameworks'. We made a simple website with TypeORM on a NodeJS backend that replicates a
-                            music catalogue. The focus for this project was not the design of the website but the
-                            functionality of the<br> backend making an extensive REST API with ORM functionality and
-                            WebSockets. We used TypeORM for the mapping between our JavaScript objects and a
-                            PostgreSQL<br> database.<br>WebSockets are also implemented on this website when a user adds
-                            a new song (or album) the main page will automatically fetch it for the other users so
-                            everyone stays up to date.</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button"><a
-                                class="link-light" href="#" style="text-decoration: none;">GITHUB</a></button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-matrix">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">WELCOME TO THE MATRIX (03/2021–07/2021)</h4><button class="btn-close"
-                            type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>This project is a web application made with HTML/CSS/JavaScript. You might be wondering, what
-                            is this? Something with AR/VR? Or a simulation? Nope, the goal of this project was to let
-                            people use it to train their algorithmic thinking skills. To be more specific, the main
-                            audience are children from high school. The website teaches the basic concepts of linear
-                            algebra in an interactive manner.<br><br>Next to the main tests for this topic, the project
-                            also included two real life examples where the user could use their newly acquired
-                            knowledge.&nbsp;<br>•&nbsp;&nbsp;“Crack the wallet” where the user must decode a bitcoin
-                            wallet using linear algebra (Hill cipher encryption)&nbsp;<br>•&nbsp;&nbsp;“Zombie
-                            simulatie” where the user can use Markov matrices to simulate the evolution of a zombie
-                            apocalypse</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button"><a
-                                class="link-light" href="https://github.com/rtalwar2/WELCOME-TO-THE-MATRIX"
-                                style="text-decoration: none;">GITHUB</a></button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-cloudy">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">CLOUDY (05/2019)</h4><button class="btn-close" type="button"
-                            aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>One of my biggest projects I worked alone on was Cloudy, a smart Cloud Lamp. I made it as my
-                            final project in my very first year as a college student. I chose to make a smart lamp in
-                            the shape of a cloud.&nbsp;<br><br>The lamp had electronics in it and a little raspberry pi.
-                            The raspberry pi ran a webserver with a database that hosted an interactive website. The
-                            website was made using HTML/CSS/JS and used the openWeatherMapsAPI. On the website you can
-                            see weather reports of your chosen locations. The color of the lamp adapts to the weather of
-                            the selected location.&nbsp;<br>The lamp supports five different weather
-                            modes:<br>•&nbsp;&nbsp;sunny<br>•&nbsp;&nbsp;snow<br>•&nbsp;&nbsp;rain<br>•&nbsp;&nbsp;cloudy<br>•&nbsp;&nbsp;partially
-                            cloudy<br>•&nbsp;&nbsp;stormy&nbsp;<br>There is also a microphone built in so you can change
-                            the location of the cloud with two claps. And the LCD display shows you the location of the
-                            lamp and the weather description. You can see a little demonstration of the claps
-                            here.<br><br>It has sensors to measure the indoor air quality. It
-                            measures:<br><br>•&nbsp;&nbsp;CO2 concentration (in ppm)<br><br>•&nbsp;&nbsp;Relative
-                            humidity (in %)<br><br>•&nbsp;&nbsp;Temperature (in °C)<br><br>And an alarm (Red and Blue
-                            lights) is triggered in case the air quality was too bad.</p><img
-                            src="assets/img/cloudy2.png"><img src="assets/img/cloudy.png">
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button"><a
-                                class="link-light" href="https://github.com/rtalwar2/CloudLamp"
-                                style="text-decoration: none;">GITHUB</a></button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-conway">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">CONWAY’S GAME OF LIFE (11/2020)</h4><button class="btn-close"
-                            type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>This project was made for the course object-oriented programming at Ghent University. The
-                            technology used to generate the GUI was JavaFX. The objective of this project was to
-                            recreate the simulation based on <a
-                                href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules">Conway’s</a><br><a
-                                href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules">Game of Life</a>. You
-                            must load an initial state through a txt file or by pressing on the cells</p><img
-                            src="assets/img/game_of_life.png">
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-ML">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">TripAdvisor - ML project</h4><button class="btn-close" type="button"
-                            aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>This was a Machine Learning project completed as part of the Machine Learning course at Ghent
-                            University. The project aimed to explore and make predictions on a dataset of 2500
-                            TripAdvisor listings in East-Flanders, scraped from the website. The data consisted mostly
-                            of tabular, text, and image data.<br><br>The project consisted of three
-                            sprints:<br><br>Exploratory Data Analysis (EDA): Conducted a thorough EDA of the data,
-                            including finding interesting insights such as recommended restaurants for dog-walking and
-                            the location of expensive restaurants in Ghent.<br><br>Traditional ML Methods: Built
-                            predictive models using traditional ML methods, including a recommendation system based on
-                            image clustering, a "budget filter" model, and an "influencer maker" model to determine
-                            measures for maximizing restaurant reviews.<br><br>Deep Learning Methods: Improved the
-                            recommendation system from sprint 2 with the use of deep learning methods, including anomaly
-                            detection to improve classification models and text generation models such as fine-tuning
-                            GPT-2 to generate restaurant reviews.</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button"><a
-                                class="link-light" href="https://github.com/rtalwar2/ML-Project"
-                                style="text-decoration: none;">GITHUB</a></button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-dronethesis">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">2nd MASTER THESIS (09/2024 - 06/2025)</h4><button class="btn-close"
-                            type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>currently in progress...<br><br>
-                        </p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-brainrun">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Brain Run (09/2023 - 06/2024)</h4><button class="btn-close"
-                            type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>What if Temple Run existed in real life? Well, that’s exactly what we set out to create
-                            (minus the black monsters chasing you)! This project started as a challenge in the Design
-                            Project course, where I teamed up with eight fellow students to bring this ambitious idea to
-                            life.<br><br>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Raman Talwar</a>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-                            Brain Run is an interactive experience that blends physical activity with cognitive
-                            engagement. While running on a treadmill, players control their in-game character using hand
-                            movements—plus, the faster you run in real life, the faster you move in the game! To add an
-                            educational aspect, players can answer dynamically generated questions based on their
-                            syllabus, making workouts both engaging and mentally stimulating.</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-thesis">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">MASTER THESIS (09/2022 - 06/2023)</h4><button class="btn-close"
-                            type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Exploring Explainable AI techniques for Detecting Contamination Features for improved Machine
-                            Learning-based Intrusion Detection. The goal of this thesis is to develop a methodology that
-                            detects contaminating features in intrusion detection system (IDS) datasets using
-                            explainable artificial intelligence (XAI) techniques such as SHAP. Additionally, the
-                            inter-dataset generalization technique is employed to assess the impact of these features on
-                            the generalization ability of machine learning (ML) models.</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button"><a
-                                class="link-light" href="https://github.com/rtalwar2/ML-for-NIDS"
-                                style="text-decoration: none;">GitHub</a></button></div>
-                </div>
-            </div>
-        </div>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">PhD candidate · IDLab-AIRO · Ghent University – imec</div>
+      <h1>Raman Talwar</h1>
+      <p class="lede">I work on robot manipulation at <a href="https://airo.ugent.be">IDLab-AIRO</a>, supervised by Francis wyffels. I am interested in how robots acquire new skills cheaply: from written procedures executed by a coding agent, and from sensors that exist only during training.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:raman.talwar@ugent.be"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>raman.talwar@ugent.be</a>
+        <a class="btn" href="https://github.com/rtalwar2" rel="me"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/raman-talwar/" rel="me"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.5c0 1 .8 1.8 1.8 1.8h20.4c1 0 1.8-.8 1.8-1.8V1.7c0-1-.8-1.7-1.8-1.7z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=_pQoq8AAAAAJ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Scholar</a>
+      </div>
+    </div>
+    <figure class="hero-fig">
+      <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/"><img src="assets/img/coding-agent-cell.webp" alt="A UR3e robot arm with a wrist camera above a children's shape sorter" width="1200" height="675"></a>
+      <figcaption>The UR3e cell from <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/">Generalizing Manipulation Skills with a Local Coding Agent</a>, 2026.</figcaption>
+    </figure>
+  </div>
+</header>
 
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-drone">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">BACHELOR THESIS WITH AUTOMOTIVE DRONES (02/2022 - 06/2022)</h4><button
-                            class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>My bachelor thesis is in collaboration with Jan De Nul. Our task is to use drones to perform
-                            autonomous&nbsp;<br>object location measurements.&nbsp;<br>For their project, positioning
-                            items are critical to perform their operations according to the design/plan.&nbsp;<br>The
-                            positioning of for example buoys is done by support vessels at the moment. Our task is to
-                            automate&nbsp;<br>part of this cumbersome process using semi-autonomous drones.<br><br>We
-                            made an Android application in android studio and used the DJI mobileSDK to communicate
-                            with&nbsp;<br>the drone. In this project we used a variety of sensors in the drone and some
-                            Machine learning for object detection to realize the georeferencing of buoys through a video
-                            stream.<img src="assets/img/drone.png"></p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
+<section id="research">
+  <div class="wrap sec-head">
+    <h2>Research</h2>
+    <div class="prose">
+      <p>Two threads so far. The first is <strong>coding agents on real robots</strong>. Most of what a robot needs for a new task is already written down somewhere: a procedure, a few measured values, the checks that tell you it worked. I study what happens when a language model gets that text plus a coding interface to the robot, instead of a policy trained end to end: which parts transfer to new objects and task compositions, where it breaks, and what the failures say about perception, anchoring and body awareness. I do this with open-weight models on a single workstation, so the whole loop stays local, inspectable and cheap enough to log every trial.</p>
+      <p>The second is <strong>instrumentation for contact-rich manipulation</strong>: adding sensors to objects during training only, and using that privileged signal to shape representations a vision-and-audio policy can use at deployment. Button pressing is my testbed, with a microphone in the fingertip.</p>
+      <p>Before robotics I worked on explainable AI for machine-learning-based intrusion detection, and on autonomous drones for measurement tasks: RF-EMF exposure mapping and georeferencing buoys at sea.</p>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap sec-head">
+    <h2>Publications</h2>
+    <div>
+      <article class="pub">
+        <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/"><img src="assets/img/coding-agent-cell.webp" alt="" width="1200" height="675" loading="lazy"></a>
+        <div>
+          <h3><a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/">Generalizing Manipulation Skills with a Local Coding Agent</a></h3>
+          <p class="authors"><b>Raman Talwar</b>*, Elias Nijs*, Andreas Verleysen, Francis wyffels</p>
+          <p class="venue">Preprint, 2026 · IDLab-AIRO, Ghent University – imec · *equal contribution</p>
+          <p class="summary">A 27B open-weight model, served locally and given a coding harness, nine primitives and a hand-written procedure for one object, generalized that procedure to new colours, sizes, shapes and task compositions on a UR3e in 30 of 45 trials. We report every trial, the failure modes, and a second-pass effect that halves execution time.</p>
+          <div class="links">
+            <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/">Project page</a>
+            <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/assets/paper.pdf">PDF</a>
+            <a href="https://youtu.be/09Z0gJm21E4">Video (3 min)</a>
+            <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/#bibtex">BibTeX</a>
+          </div>
         </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-microservice">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">MICROSERVICE APPLICATION (09/2022 - 12/2022)</h4><button
-                            class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>For my Systems Design course, I had the opportunity to work on a project that involved
-                            building a microservice-based application using the Quarkus framework. The objective of the
-                            project was to design and implement a system that could handle a high volume of requests and
-                            handle them efficiently.<br><br>To achieve this goal, me and my team decided to use the
-                            Kafka message queue for asynchronous communication between the services and REST for
-                            synchronous communication. This allowed us to decouple the services and ensure that each
-                            service could handle its own workload without being affected by the performance of other
-                            services.<br><br>We also used a NoSQL database for each service, which allowed us to scale
-                            the database easily and handle large amounts of data.&nbsp;<br><br>Throughout the project, I
-                            learned a lot about systems design and building a microservice application. I gained
-                            experience in working with the Quarkus framework, Kafka, and REST, as well as NoSQL
-                            databases.<br><br>Overall, this project was a great learning experience and helped me to
-                            understand the importance of designing a system that can handle a high volume of requests
-                            and how to achieve that by using microservices and message queues.</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
+      </article>
+
+      <article class="pub" style="margin-top:16px">
+        <a href="https://arxiv.org/abs/2604.05954"><img src="assets/img/buttons-setup.webp" alt="UR3e with a microphone fingertip above an instrumented push button" width="1200" height="816" loading="lazy"></a>
+        <div>
+          <h3><a href="https://arxiv.org/abs/2604.05954">You're Pushing My Buttons: Instrumented Learning of Gentle Button Presses</a></h3>
+          <p class="authors"><b>Raman Talwar</b>, Remko Proesmans, Thomas Lips, Andreas Verleysen, Francis wyffels</p>
+          <p class="venue"><a href="https://active-perception-workshop.github.io/">Workshop on Learning and Representations for Active Perception in Manipulation</a>, ICRA 2026, Vienna · arXiv:2604.05954</p>
+          <p class="summary">Can sensors that exist only at training time improve a manipulation policy without becoming a deployment dependency? We instrument a push button, use its state as privileged supervision to fine-tune an audio encoder on a fingertip microphone, and combine the result with diffusion-policy imitation learning. Success rates match the baselines, but the instrumentation-guided audio representations consistently press with less force.</p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2604.05954">arXiv</a>
+            <a href="https://arxiv.org/pdf/2604.05954">PDF</a>
+            <a href="https://active-perception-workshop.github.io/">Workshop</a>
+          </div>
         </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-dampkap">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">The Finger (07/2024 - 08/2024)</h4><button
-                            class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <video width="240" height="320" controls>
-                            <source src="./assets/video/fixed.mp4" type="video/mp4">
-                          Your browser does not support the videos.
-                          </video>
-                          <p>
-                            We installed a new extractor hood in our kitchen, but ran into a problem: the control buttons are positioned too high to reach easily.  <br>
-                            Option 1: lower the hood — but that would violate our fire insurance.  <br>
-                            Option 2: buy a remote control — for €150.  <br>
-                            Option 3: build a solution myself — and that’s how "the finger" was born.
-                        </p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button"
-                            data-bs-dismiss="modal">Close</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="container py-4 py-xl-5">
-            <div class="row mb-5">
-                <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>Projects</h2>
-                    <hr class="my-4">
-                </div>
-            </div>
-            <div class="row gy-4 row-cols-1 row-cols-md-2">
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;"
-                                src="assets/img/robot.jpg"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>The Finger</h4>
-                            <p>Built something genuinely useful — it's used every single day!</p><button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#modal-dampkap">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;"
-                                src="assets/img/drone_life.webp"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>2nd MASTER THESIS</h4>
-                            <p>Building an autonomous drone system to perform RF - EMF exposure measurements with
-                                drones.<br></p><button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#modal-dronethesis">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;"
-                                src="assets/img/brainrun_logo.png"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>Brain Run</h4>
-                            <p>Working in a team of 9 people on a challenge to make physical activity and education more
-                                fun.
-                                Combining different technologies like NLP, Computer Vision, Hardware, Full Stack
-                                development and
-                                also learning some organizational skills<br></p><button class="btn btn-primary"
-                                type="button" data-bs-toggle="modal" data-bs-target="#modal-brainrun">Tell me
-                                more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;"
-                                src="assets/img/study_ghibli.jpg"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>1st MASTER THESIS</h4>
-                            <p>Exploring Explainable AI techniques for Detecting Contamination Features for improved
-                                Machine Learning-based Intrusion Detection<br></p><button class="btn btn-primary"
-                                type="button" data-bs-toggle="modal" data-bs-target="#modal-thesis">Tell me
-                                more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;"
-                                src="assets/img/building_blocks.webp"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>MICROSERVICE APPLICATION</h4>
-                            <p>Microservice-based application for Systems Design course, built using the Quarkus
-                                framework.</p><button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#modal-microservice">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;"
-                                src="assets/img/drone.png"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>BACHELOR THESIS WITH AUTOMOTIVE DRONES</h4>
-                            <p>Automated georeferencing by using semi autonomous drones, building a custom android app
-                                that uses Machine learning to perform object detection and
-                                location&nbsp;<br>measurements.</p><button class="btn btn-primary" type="button"
-                                data-bs-toggle="modal" data-bs-target="#modal-drone">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;"
-                                src="assets/img/robot_fight.webp"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>ROBOT FIGHT🤖</h4>
-                            <p>What do you think this is?</p><button class="btn btn-primary" type="button"
-                                data-bs-toggle="modal" data-bs-target="#modal-robot">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 143px;"
-                                src="assets/img/fea.png"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>INNOVATION FOR SOCIETY </h4>
-                            <p>I was admitted to this program organized by the faculty of Engineering and Architecture
-                                at Ghent University, designed for students with excellent academic results who are also
-                                eager to work on projects that make the society a better place. </p><button
-                                class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#modal-ifs">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 143px;"
-                                src="assets/img/lazy.jpg"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>EXTENSIVE REST API </h4>
-                            <p>REST-API&nbsp;and web application made for the course 'Server Application Frameworks'.
-                            </p><button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#modal-rest">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 143px;"
-                                src="assets/img/matrix.png"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>WELCOME TO THE MATRIX </h4>
-                            <p>Want to teach basic linear algebra to kids? Check out this cool project!</p><button
-                                class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#modal-matrix">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 143px;"
-                                src="assets/img/cloudy.png"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>Cloudy</h4>
-                            <p>A lamp so smart you would also want one. It can tell the weather, measure indoor climate,
-                                and changes it's colors depending on the weather😎</p><button class="btn btn-primary"
-                                type="button" data-bs-toggle="modal" data-bs-target="#modal-cloudy">Tell me
-                                more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 143px;"
-                                src="assets/img/game_of_life.png"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>CONWAY’S GAME OF LIFE </h4>
-                            <p>Project for introductory course in Object Oriented Programming.</p><button
-                                class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#modal-conway">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-column flex-lg-row">
-                        <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 143px;"
-                                src="assets/img/tripadvisor.png"></div>
-                        <div class="py-4 py-lg-0 px-lg-4">
-                            <h4>TripAdvisor - ML project</h4>
-                            <p>Discover the Data Scientist in yourself and get insights from the TripAdvisor dataset to
-                                increase your restaurant's revenue.</p><button class="btn btn-primary" type="button"
-                                data-bs-toggle="modal" data-bs-target="#modal-ML">Tell me more!</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 text-center mx-auto">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="my-4">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2 col-xl-4 text-center ms-auto"><i
-                        class="fa fa-linkedin-square fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300"
-                        data-aos-once="true"></i>
-                    <p><a href="https://www.linkedin.com/in/raman-talwar/">Raman Talwar | LinkedIn</a></p>
-                </div>
-                <div class="col-lg-4 col-xl-4 text-center me-auto"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"
-                        data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300" data-aos-once="true"></i>
-                    <p><a href="mailto:raman.talwar@outlook.be">raman.talwar@outlook.be</a></p>
-                </div>
-                <div class="col-lg-4 col-xl-4 text-center me-auto"><i class="fab fa-github fa-3x mb-3 sr-contact"
-                        data-aos="zoom-in" data-aos-duration="300" data-aos-delay="600" data-aos-once="true"></i>
-                    <p><a href="https://github.com/rtalwar2/">rtalwar2 (github.com)</a></p>
-                </div>
-                <!-- <div class="col-lg-4 col-xl-3 text-center me-auto"><i class="fab fa-kaggle fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="900" data-aos-once="true"></i>
-                    <p><a href="https://www.kaggle.com/ramantalwar00">Raman Talwar | Kaggle</a></p>
-                </div> -->
-            </div>
-        </div>
-    </section>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/baguetteBox.min.js"></script>
-    <script src="assets/js/creative.js"></script>
-    <!-- <script>
-        const videoModal = document.getElementById('modal-dampkap');
-        videoModal.addEventListener('shown.bs.modal', function () {
-          const video = videoModal.querySelector('video');
-          video.setAttribute("src","assets/video/20240827_195700.mp4");
-        //   video.load(); // Reloads the video to force display
-          console.log(video)
-        });
-      </script> -->
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap sec-head">
+    <h2>Selected projects</h2>
+    <div>
+      <div class="projects">
+
+        <article class="proj">
+          <img src="assets/img/finger.jpg" alt="The actuator mounted on top of the kitchen extractor hood, with the remote in hand" width="960" height="720" loading="lazy">
+          <div>
+            <h3>The Finger <span>2024</span></h3>
+            <p>Our new kitchen extractor hood has its buttons out of reach. Lowering it would break the fire-insurance rules and the official remote costs €150, so I built a small actuator that sits on the hood and presses the buttons for me, driven by a cheap infrared remote. An Arduino Nano Every is powered from the hood's own control board so the IR receiver is always listening. A transistor-switched 9 V battery powers the servo only for the moment it moves, so one battery lasts about six months. In daily use since 2024.</p>
+            <div class="links"><a class="local" href="assets/video/finger.mp4">Video (10 s)</a></div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="ph" aria-hidden="true">RF-EMF</div>
+          <div>
+            <h3>Quadcopter-based autonomous monitoring of RF-EMF exposure <span>Master's thesis, 2024–2025</span></h3>
+            <p>A fully autonomous quadcopter with a broadband probe that maps radio-frequency electromagnetic field exposure and finds hotspots, replacing manual point measurements with repeatable, georeferenced flights. Most of the work was making the platform measure honestly: characterising the interference from the drone's own telemetry and radio link, the frequency-dependent shielding of the frame, and cleaning the signal accordingly. With the WAVES group at Ghent University – imec, supervised by Wout Joseph and Kenneth Deprez.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <img src="assets/img/brainrun_logo.png" alt="Brain Run logo" width="602" height="602" loading="lazy">
+          <div>
+            <h3>Brain Run <span>Design project, 2023–2024</span></h3>
+            <p>Temple Run on a real treadmill. Your running speed drives the character, hand movements steer it, and quiz questions generated from your own course material appear along the track. In a team of nine I built the hardware prototype and its interface to the game: a Hall sensor for belt speed and a lidar for incline, both calibrated.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="ph" aria-hidden="true">XAI · IDS</div>
+          <div>
+            <h3>Explainable AI for intrusion detection <span>Master's thesis, 2022–2023</span></h3>
+            <p>Intrusion-detection datasets often contain features that leak the label. I used SHAP to detect these contaminating features and inter-dataset generalization to measure how much they inflate reported performance.</p>
+            <div class="links"><a href="https://github.com/rtalwar2/ML-for-NIDS">Code</a></div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <img src="assets/img/drone.png" alt="Drone camera view with detected buoys" width="456" height="228" loading="lazy">
+          <div>
+            <h3>Georeferencing buoys with drones <span>Bachelor's thesis with Jan De Nul, 2022</span></h3>
+            <p>Support vessels position buoys by hand for dredging operations. We built an Android app on the DJI Mobile SDK that flies a drone over the site, detects buoys in the video stream and georeferences them from the drone's sensors.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="ph" aria-hidden="true">IoT</div>
+          <div>
+            <h3>Cloudy <span>2019</span></h3>
+            <p>A cloud-shaped lamp on a Raspberry Pi whose colour follows the live weather of a chosen city. Clap twice to switch location. It also monitors indoor CO₂, humidity and temperature and flashes when the air gets bad. My first-year project.</p>
+            <div class="links"><a href="https://github.com/rtalwar2/CloudLamp">Code</a></div>
+          </div>
+        </article>
+
+      </div>
+      <p class="also">Every summer a friend and I each build a combat robot and put them in a ring. Mine has never won.</p>
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap sec-head">
+    <h2>Background</h2>
+    <ul class="timeline">
+      <li><span class="when">Feb 2026</span><span class="what"><b>ROMANDIC Winter School on robot handling of deformables</b><small>Kranjska Gora, Slovenia. Presented the early button-pressing work that became the ICRA workshop paper.</small></span></li>
+      <li><span class="when">Oct 2025 –</span><span class="what"><b>PhD candidate, IDLab-AIRO, Ghent University – imec</b><small>Robot manipulation. Supervised by Francis wyffels.</small></span></li>
+      <li><span class="when">2023 – 2025</span><span class="what"><b>MSc Computer Science Engineering, Ghent University</b><small>Summa cum laude. Thesis on autonomous drone monitoring of RF-EMF exposure with the WAVES group.</small></span></li>
+      <li><span class="when">2023</span><span class="what"><b>Boulvin-Van Engelen Prize, AIG</b><small>Awarded to the best engineering technology student of the year across the full programme.</small></span></li>
+      <li><span class="when">2022 – 2023</span><span class="what"><b>MSc Information Engineering Technology, Ghent University</b><small>Thesis on explainable AI for intrusion detection.</small></span></li>
+      <li><span class="when">2018 – 2022</span><span class="what"><b>BSc Information Engineering Technology, Ghent University</b><small>Thesis on drone-based buoy georeferencing with Jan De Nul.</small></span></li>
+      <li><span class="when">2021 – 2022</span><span class="what"><b>Innovation for Society honours programme</b><small>Faculty of Engineering and Architecture, Ghent University. First hands-on ML work: detecting and mitigating bias in classifiers.</small></span></li>
+      <li><span class="when">2022, 2024</span><span class="what"><b>Open Summer of Code</b><small>Student in 2022, coach in 2024.</small></span></li>
+      <li><span class="when">2022</span><span class="what"><b>ENLIGHT exchange, University of Groningen</b></span></li>
+      <li><span class="when">2016</span><span class="what"><b>Delegate, European Youth Parliament Belgium</b><small>23rd National Selection Conference.</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap sec-head">
+    <h2>Contact</h2>
+    <div class="prose contact-grid">
+      <div>
+      <p>Happy to talk about coding agents on real robots, instrumentation for learning, or to hear about a task you think one of them should fail at.</p>
+      <div class="links">
+        <a class="local" href="mailto:raman.talwar@ugent.be">raman.talwar@ugent.be</a>
+        <a href="https://github.com/rtalwar2">GitHub</a>
+        <a href="https://www.linkedin.com/in/raman-talwar/">LinkedIn</a>
+        <a href="https://airo.ugent.be">IDLab-AIRO</a>
+      </div>
+      </div>
+      <figure class="side-fig"><img src="assets/img/aurora.jpg" alt="Raman photographing the northern lights" width="1200" height="900" loading="lazy"><figcaption>Off duty.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Raman Talwar</span>
+    <span>Ghent, Belgium</span>
+  </div>
+</footer>
+
 </body>
-
 </html>
