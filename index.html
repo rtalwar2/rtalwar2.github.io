@@ -47,7 +47,7 @@ nav ul a{color:var(--ink-2)}
 @media (max-width:520px){nav ul{gap:12px;font-size:13px}}
 
 .hero{padding-block:64px 40px}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;align-items:center}
 @media (max-width:760px){.hero-grid{grid-template-columns:1fr}.hero{padding-block:40px 24px}}
 .eyebrow{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
 .hero h1{font-size:clamp(38px,6vw,56px);font-weight:700}
@@ -58,9 +58,9 @@ nav ul a{color:var(--ink-2)}
 .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 .btn svg{width:16px;height:16px}
-.hero-fig{margin:0}
-.hero-fig img{border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;width:100%}
-.hero-fig figcaption{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:8px}
+.hero-fig{margin:0;display:flex;justify-content:flex-end}
+.hero-fig img{border-radius:50%;aspect-ratio:1;object-fit:cover;width:min(100%,300px);box-shadow:0 1px 2px rgba(0,0,0,.08),0 12px 32px -12px rgba(0,0,0,.35)}
+@media (max-width:760px){.hero-fig{justify-content:flex-start;order:-1}.hero-fig img{width:160px}}
 
 section{padding-block:40px;border-top:1px solid var(--line)}
 .sec-head{display:grid;grid-template-columns:180px minmax(0,1fr);gap:32px}
@@ -136,8 +136,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
       </div>
     </div>
     <figure class="hero-fig">
-      <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/"><img src="assets/img/coding-agent-cell.webp" alt="A UR3e robot arm with a wrist camera above a children's shape sorter" width="1200" height="675"></a>
-      <figcaption>The UR3e cell from <a href="https://rtalwar2.github.io/agentic-coding-for-robot-manipulation/">Generalizing Manipulation Skills with a Local Coding Agent</a>, 2026.</figcaption>
+      <img src="assets/img/portrait.jpg" alt="Portrait of Raman Talwar" width="400" height="400">
     </figure>
   </div>
 </header>
